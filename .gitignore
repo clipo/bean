@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+
+# R output files
+*_output.txt
+*.Rout
+
+# Quarto build artifacts
+*_cache/
+*_files/
+.quarto/
+
+# LaTeX intermediate files
+*.aux
+*.log
+*.out
+*.toc
+*.tex
+
+# RStudio
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
