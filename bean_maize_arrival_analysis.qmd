@@ -221,7 +221,7 @@ kable(summary_table,
   kable_styling(latex_options = c("striped", "hold_position"))
 ```
 
-The dataset comprises **`r nrow(dates)` radiocarbon dates** from sites across the northeastern Eastern Woodlands. **Squash dates** (n=`r nrow(squash_dates)`) span from the Mid-Holocene (5695 BP) to the Late Prehistoric (2625 BP), representing a **~3,000 year** temporal range. **Bean dates** (n=`r nrow(bean_dates)`) and **maize dates** (n=`r nrow(maize_dates)`) are concentrated in the Late Prehistoric period (310-829 BP), reflecting their late arrival in the region.
+The dataset comprises **`r nrow(dates)` radiocarbon dates** from sites across the northeastern Eastern Woodlands. **Squash dates** (n=`r nrow(squash_dates)`) span from the Mid-Holocene (5695 BP) to the Late Prehistoric (820 BP), representing a **~5,000 year** temporal range. **Bean dates** (n=`r nrow(bean_dates)`) range from 277-920 BP and **maize dates** (n=`r nrow(maize_dates)`) range from 270-1050 BP, both concentrated in the Late Prehistoric period, reflecting their late arrival in the region. Notably, the oldest maize dates (1050±40, 990±40, 960±40 BP from Broome Tech) push maize arrival significantly earlier than previously documented.
 
 \newpage
 
