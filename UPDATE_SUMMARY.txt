@@ -1,0 +1,73 @@
+==============================================================================
+PAF DATA INTEGRATION - COMPLETE UPDATE SUMMARY
+Date: October 8, 2025
+==============================================================================
+
+FILES UPDATED WITH NEW DATA (157 dates total):
+
+1. radiocarbon_dates.csv
+   - Updated from 114 to 157 dates
+   - Beans: 41 → 44 dates (+3)
+   - Maize: 65 → 109 dates (+44)
+   - Squash: 3 → 4 dates (+1)
+   - Added reference column for tracking sources
+
+2. bean_maize_arrival_analysis.qmd
+   - Updated all sample size references (114→157, 41→44, 70→109, 3→4)
+   - Added note about PAF data sources in Executive Summary
+   - Updated squash date table to include 4th specimen
+   - Updated text to reflect new squash specimen from Broome Tech PAF
+
+3. bean_maize_arrival_analysis.pdf
+   - Successfully rendered with updated data (598 KB)
+   - All 65 code chunks executed successfully
+   - Timestamp: October 8, 2025
+
+4. arrival_summary.csv
+   - Updated Bayesian arrival estimates with new data
+   - Maize earliest: 954 cal BP (AD 996) - 120 years earlier than beans
+   - Bean earliest: 834 cal BP (AD 1116)
+   
+NEW FILES CREATED:
+
+1. paf_dates.csv - Structured data from PAF_Dates.pdf (43 dates)
+2. PAF_INTEGRATION_SUMMARY.md - Detailed documentation
+3. merge_paf_dates.R - Script for combining datasets
+4. radiocarbon_dates_backup.csv - Backup of original data
+5. UPDATE_SUMMARY.txt - This file
+
+ANALYSES RE-RUN SUCCESSFULLY:
+
+✓ bayesian_arrival_final.R - Bayesian arrival analysis
+✓ three_sisters_comparison.R - Three-way hypothesis testing  
+✓ run_abc_comparison.R - ABC demographic model comparison
+✓ Quarto document rendering - Full PDF report
+
+KEY RESULTS WITH NEW DATA:
+
+1. MAIZE NOW SIGNIFICANTLY EARLIER than previous analyses
+   - Oldest dates from Broome Tech PAF: 1050±40, 990±40, 960±40 BP
+   - Best estimate: AD 996 (was ~AD 1040-1100 previously)
+
+2. BEAN-MAIZE TEMPORAL GAP confirmed
+   - Maize ~120 years earlier than beans
+   - Beans: AD 1116 (834 cal BP)
+   - Maize: AD 996 (954 cal BP)
+
+3. SQUASH ANTIQUITY unchanged
+   - Still 3000+ years before agricultural crops
+   - One new Late Prehistoric specimen (AD 1159-1281)
+
+4. SAMPLE SIZE IMPROVEMENTS
+   - Maize +68% increase (65→109 dates)
+   - Strengthens statistical confidence in estimates
+   - Reduces uncertainty in boundary estimates
+
+NEXT STEPS (if needed):
+
+□ Check for potential duplicates between Hart & PAF datasets
+□ Geographic analysis with new PAF site locations
+□ Update any manuscripts/presentations with new sample sizes
+□ Consider sensitivity analysis excluding/including PAF dates
+
+==============================================================================

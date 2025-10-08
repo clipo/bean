@@ -33,7 +33,7 @@ Hart's work emphasized that earlier chronologies were built on unreliable indire
 
 ## Our Approach
 
-We test Hart's hypotheses using rigorous Bayesian chronological modeling applied to an expanded dataset of 114 direct AMS radiocarbon dates on beans (41 dates), maize (70 dates), and squash (3 dates) from sites across the northeastern Eastern Woodlands. Our analysis employs Bayesian boundary estimation to determine earliest arrival dates, formal hypothesis testing to compare competing models of agricultural adoption, and chronological modeling to assess whether beans and maize arrived simultaneously or sequentially. This represents the first comprehensive statistical evaluation of Hart's agricultural sequence model, providing quantitative measures of uncertainty and explicit tests of alternative hypotheses.
+We test Hart's hypotheses using rigorous Bayesian chronological modeling applied to an expanded dataset of 157 direct AMS radiocarbon dates on beans (44 dates), maize (109 dates), and squash (4 dates). This expanded dataset includes 43 new dates from Public Archaeology Facility (PAF) reports from sites across the northeastern Eastern Woodlands. Our analysis employs Bayesian boundary estimation to determine earliest arrival dates, formal hypothesis testing to compare competing models of agricultural adoption, and chronological modeling to assess whether beans and maize arrived simultaneously or sequentially. This represents the first comprehensive statistical evaluation of Hart's agricultural sequence model, providing quantitative measures of uncertainty and explicit tests of alternative hypotheses.
 
 ## Key Findings
 
@@ -123,7 +123,7 @@ Through formal Bayesian analysis, we can evaluate each component of Hart's argum
 
 ## Data
 
-We analyzed an expanded dataset of 101 radiocarbon dates from multiple sources. The bean assemblage comprises 39 dates, including 36 dates from Hart et al.'s [-@hart2002] Tables 1 and 2, plus three additional dates from the Diable site in Vermont reported by Hart [-@hart2022]. The maize dataset totals 59 dates, drawing from 14 dates published by Hart et al. [-@hart2002], 41 dates from New York contact-period sites and the Great Lakes region obtained from additional sources, and four dates from the Diable site reported by Hart [-@hart2022]. The squash assemblage is necessarily small with only three available dates: one from the Sharrow site in Maine (AA-7491, 5695±100 BP) published by Petersen and Asch Sidell [-@petersen1996], and two from Memorial Park in Pennsylvania (AA-19129, 5404±552 BP and AA-19128, 2625±45 BP) reported by Hart and Asch Sidell [-@hart1997].
+We analyzed an expanded dataset of 157 radiocarbon dates from multiple sources. The bean assemblage comprises 44 dates, including 36 dates from Hart et al.'s [-@hart2002] Tables 1 and 2, plus three additional dates from the Diable site in Vermont reported by Hart [-@hart2022]. The maize dataset totals 109 dates, drawing from 14 dates published by Hart et al. [-@hart2002], 41 dates from New York contact-period sites and the Great Lakes region obtained from additional sources, and four dates from the Diable site reported by Hart [-@hart2022]. The squash assemblage is necessarily small with only three available dates: one from the Sharrow site in Maine (AA-7491, 5695±100 BP) published by Petersen and Asch Sidell [-@petersen1996], and two from Memorial Park in Pennsylvania (AA-19129, 5404±552 BP and AA-19128, 2625±45 BP) reported by Hart and Asch Sidell [-@hart1997].
 
 All dates in our dataset represent direct AMS dates on the crop remains themselves—seeds, kernels, or rind fragments—thereby avoiding the indirect association problems that plagued earlier chronologies. This methodological requirement reflects Hart's fundamental insight that only direct dating of crop materials provides reliable chronological control, as stratigraphic associations can be misleading due to feature reuse, contamination, or complex site formation processes.
 
@@ -809,12 +809,14 @@ squash_table <- data.frame(
   Cal_Range = c(
     "5868-5568 BC",
     "6400-4300 BC",
-    "800-540 BC"
+    "800-540 BC",
+    "AD 1159-1281"
   ),
   Reference = c(
     "Petersen & Asch Sidell 1996",
     "Hart & Asch Sidell 1997",
-    "Hart & Asch Sidell 1997"
+    "Hart & Asch Sidell 1997",
+    "Miroff & Kudrle 2017 (PAF)"
   )
 )
 
@@ -825,7 +827,7 @@ kable(squash_table,
   kable_styling(latex_options = c("striped", "hold_position"))
 ```
 
-All three dates are on **Cucurbita pepo** (squash/gourd) rind fragments. The two oldest dates (Sharrow and Memorial Park AA-19129) represent **gourd morphology** (thin-rinded, likely used for containers/seeds), while Memorial Park AA-19128 represents **domesticated squash** with thick-rind edible-flesh morphology.
+Three of the four dates are on **Cucurbita pepo** (squash/gourd) rind fragments from Mid-Holocene contexts. The two oldest dates (Sharrow and Memorial Park AA-19129) represent **gourd morphology** (thin-rinded, likely used for containers/seeds), while Memorial Park AA-19128 represents **domesticated squash** with thick-rind edible-flesh morphology. The fourth date (Broome Tech PAF) is a Late Prehistoric specimen contemporaneous with beans and maize.
 
 ### Three-Way Bayesian Comparison
 

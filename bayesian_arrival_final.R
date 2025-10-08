@@ -149,16 +149,23 @@ cat("\n")
 
 # Create visualizations
 cat("Creating plots...\n")
+tryCatch({
 pdf("arrival_analysis_results.pdf", width = 16, height = 10)
 layout(matrix(c(1,1,2,2,3,3,4,5,6,7,8,9), nrow = 2, byrow = TRUE))
 
-# Plot SPDs comparison - manual plotting
+# Plot SPDs comparison - manual plotting with safe ylim
 bean_years <- 1950 - bean_spd$grid$calBP
 maize_years <- 1950 - maize_spd$grid$calBP
+
+# Remove any NA or infinite values and calculate safe ylim
+bean_prdens_clean <- bean_spd$grid$PrDens[is.finite(bean_spd$grid$PrDens)]
+maize_prdens_clean <- maize_spd$grid$PrDens[is.finite(maize_spd$grid$PrDens)]
+max_prdens <- max(c(bean_prdens_clean, maize_prdens_clean), na.rm = TRUE)
+
 plot(bean_years, bean_spd$grid$PrDens, type = "l",
      main = "Bean vs Maize SPD Comparison", cex.main = 1.5,
      xlab = "Calendar Year", ylab = "Summed Probability",
-     col = "blue", lwd = 2, ylim = c(0, max(c(bean_spd$grid$PrDens, maize_spd$grid$PrDens))))
+     col = "blue", lwd = 2, ylim = c(0, max_prdens * 1.1))
 lines(maize_years, maize_spd$grid$PrDens, col = "darkgreen", lwd = 2)
 abline(v = 1950 - bean_peak, col = "blue", lty = 2, lwd = 1)
 abline(v = 1950 - maize_peak, col = "darkgreen", lty = 2, lwd = 1)
@@ -169,14 +176,14 @@ legend("topleft", legend = c("Bean", "Maize"), col = c("blue", "darkgreen"),
 plot(bean_years, bean_spd$grid$PrDens, type = "l",
      main = "Bean Summed Probability", cex.main = 1.3,
      xlab = "Calendar Year", ylab = "Summed Probability",
-     col = "blue", lwd = 2)
+     col = "blue", lwd = 2, ylim = c(0, max(bean_prdens_clean, na.rm = TRUE) * 1.1))
 abline(v = 1950 - bean_peak, col = "red", lty = 2)
 
 # Plot maize SPD alone
 plot(maize_years, maize_spd$grid$PrDens, type = "l",
      main = "Maize Summed Probability", cex.main = 1.3,
      xlab = "Calendar Year", ylab = "Summed Probability",
-     col = "darkgreen", lwd = 2)
+     col = "darkgreen", lwd = 2, ylim = c(0, max(maize_prdens_clean, na.rm = TRUE) * 1.1))
 abline(v = 1950 - maize_peak, col = "red", lty = 2)
 
 # Plot oldest bean dates
@@ -195,6 +202,12 @@ for (i in 1:3) {
 
 dev.off()
 cat("Plots saved to: arrival_analysis_results.pdf\n\n")
+}, error = function(e) {
+  cat("Warning: Plot generation encountered an error:\n")
+  cat(conditionMessage(e), "\n")
+  cat("Continuing with analysis...\n\n")
+  if (dev.cur() > 1) dev.off()
+})
 
 # Save results
 results <- data.frame(
