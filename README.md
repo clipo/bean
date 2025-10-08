@@ -56,7 +56,7 @@ Our Bayesian analysis confirms Hart's fundamental insights:
 | File | Description |
 |------|-------------|
 | `bean_maize_arrival_analysis.qmd` | Complete Quarto document with full analysis |
-| `bean_maize_arrival_analysis.pdf` | Rendered PDF output (598 KB) — **Updated Oct 8, 2025** |
+| `bean_maize_arrival_analysis.pdf` | Rendered PDF output (48 pages) — **Updated Oct 8, 2025** |
 | `radiocarbon_dates.csv` | Complete dataset: **157 radiocarbon dates** (updated) |
 | `paf_dates.csv` | New PAF radiocarbon dates (43 dates) |
 | `references.bib` | Bibliography (BibTeX format) |
@@ -71,6 +71,10 @@ Our Bayesian analysis confirms Hart's fundamental insights:
 | `power_analysis_sample_size.R` | **Power analysis** — simulation-based approach |
 | `bayesian_arrival_final.R` | Final Bayesian boundary estimation |
 | `create_visualizations.R` | Generate figures for publication |
+| `sensitivity_analysis.R` | **NEW**: Comprehensive sensitivity analysis (priors, outliers, calibration) |
+| `boundary_sensitivity.R` | **NEW**: Boundary sensitivity to sample size (n=5-10 oldest dates) |
+| `abc_demographic_models.R` | **NEW**: ABC demographic modeling implementation |
+| `run_abc_comparison.R` | **NEW**: Methodological comparison (Bchron vs ABC) |
 
 ### Documentation
 
@@ -78,6 +82,11 @@ Our Bayesian analysis confirms Hart's fundamental insights:
 |----------|----------|
 | `PAF_INTEGRATION_SUMMARY.md` | **NEW**: Documentation of 43 new PAF dates integration |
 | `UPDATE_SUMMARY.txt` | **NEW**: Complete update summary (Oct 8, 2025) |
+| `FINAL_CONSISTENCY_CHECK.md` | **NEW**: Complete review of all Oct 8 corrections |
+| `SECTION5_CORRECTIONS.md` | **NEW**: Discussion section fixes documentation |
+| `SECTIONS_REMOVED.md` | **NEW**: Documentation of 164 lines removed (sections 5.7-5.11) |
+| `SENSITIVITY_SECTION_DRAFT.md` | **NEW**: Sensitivity analysis section recommendations |
+| `VERIFICATION_SUMMARY.md` | **NEW**: Consistency verification summary |
 | `POWER_ANALYSIS_SUMMARY.md` | **Critical**: Sample size limitations and power calculations |
 | `THREE_SISTERS_FINDINGS.md` | Major discovery: Squash ~4,400 years earlier than beans/maize |
 | `PDF_SEARCH_SUMMARY.md` | Systematic search methodology for radiocarbon dates |
@@ -374,7 +383,7 @@ quarto render bean_maize_arrival_analysis.qmd --to pdf
 
 ### Expected Output
 
-- `bean_maize_arrival_analysis.pdf` (385 KB)
+- `bean_maize_arrival_analysis.pdf` (48 pages)
 - Console output with statistical results
 - `power_analysis_curves.pdf` (if running simulation)
 
@@ -422,12 +431,19 @@ For questions about this analysis or to request data/code:
 
 ## Version History
 
-**v1.2 (October 8, 2025)** — **CRITICAL CORRECTION**
+**v1.2 (October 8, 2025)** — **CRITICAL CORRECTION & SENSITIVITY ANALYSIS**
 - **MAJOR FINDING REVISED**: Sequential arrival confirmed (maize → beans)
 - Maize arrives FIRST at AD 996, beans follow at AD 1116 (~120 year gap)
 - Corrected all interpretations from "simultaneous" to "sequential"
+- **REMOVED** 164 lines of incorrect speculation (sections 5.7-5.11)
+- **ADDED** comprehensive sensitivity analyses:
+  - Boundary sensitivity to sample size (n=5-10)
+  - Outlier detection and robustness testing
+  - Formal Bayes factor model comparison
 - Updated Executive Summary, Key Findings, Discussion, Conclusions
-- Re-rendered PDF with corrected analysis
+- Reduced from 98 to 48 pages through focused revisions
+- Complete internal consistency verified
+- Re-rendered PDF with all corrections
 
 **v1.1 (October 8, 2025)**
 - **MAJOR UPDATE**: Dataset expanded from 114 to 157 dates (+38%)
@@ -451,9 +467,10 @@ For questions about this analysis or to request data/code:
 ```
 bean/
 ├── README.md                              # This file
-├── bean_maize_arrival_analysis.qmd        # Main Quarto document
-├── bean_maize_arrival_analysis.pdf        # Rendered PDF (385 KB)
-├── radiocarbon_dates.csv                  # Dataset (101 dates)
+├── bean_maize_arrival_analysis.qmd        # Main Quarto document (1,948 lines)
+├── bean_maize_arrival_analysis.pdf        # Rendered PDF (48 pages)
+├── radiocarbon_dates.csv                  # Dataset (157 dates)
+├── paf_dates.csv                          # PAF dates (43 dates)
 ├── references.bib                         # Bibliography
 │
 ├── R scripts/
@@ -461,10 +478,19 @@ bean/
 │   ├── bayesian_model_comparison.R        # Bean vs. maize comparison
 │   ├── sample_size_assessment.R           # Power analysis (fast)
 │   ├── power_analysis_sample_size.R       # Power analysis (simulation)
+│   ├── sensitivity_analysis.R             # Comprehensive sensitivity analysis
+│   ├── boundary_sensitivity.R             # Boundary sensitivity (n=5-10)
+│   ├── abc_demographic_models.R           # ABC demographic modeling
+│   ├── run_abc_comparison.R               # Methodological comparison
 │   └── [other R scripts]
 │
 ├── Documentation/
-│   ├── POWER_ANALYSIS_SUMMARY.md          # ⭐ Critical findings
+│   ├── FINAL_CONSISTENCY_CHECK.md         # ⭐ Oct 8 corrections review
+│   ├── SECTION5_CORRECTIONS.md            # Discussion section fixes
+│   ├── SECTIONS_REMOVED.md                # 164 lines removed
+│   ├── SENSITIVITY_SECTION_DRAFT.md       # Sensitivity analysis plan
+│   ├── VERIFICATION_SUMMARY.md            # Consistency verification
+│   ├── POWER_ANALYSIS_SUMMARY.md          # Critical findings
 │   ├── THREE_SISTERS_FINDINGS.md          # Major discovery
 │   ├── PDF_SEARCH_SUMMARY.md              # Methodology
 │   └── [other summaries]
